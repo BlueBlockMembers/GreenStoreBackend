@@ -1,11 +1,11 @@
 const router = require("express").Router();
-import {
+const {
     addSupermarketPrice,
     deleteSupermarketPrice,
     getAllSupermarketPrice,
     getOneSupermarketPrice,
     updateSupermarketPrice
-} from '../controller/SupermarketPrice.controller'
+} = require('../controller/SupermarketPrice.controller')
 
 
 //Create supermarket price operation
