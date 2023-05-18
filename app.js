@@ -23,6 +23,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/product', require('./routes/product.route'));
+app.use('/api/marketPlace', require('./routes/SupermarketPrice.route'));
 
 app.use((req, res, next) => {
     next(createError.NotFound());
