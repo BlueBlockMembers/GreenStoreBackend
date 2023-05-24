@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const ToolSchema = mongoose.Schema(
   {
     id: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: String,
       required: true,
     },
     name: {
