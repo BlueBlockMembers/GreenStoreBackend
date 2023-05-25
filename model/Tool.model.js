@@ -19,7 +19,7 @@ const ToolSchema = mongoose.Schema(
       default: "0.00",
     },
     image: {
-      type: Blob,
+      type: String,
       default: "",
     },
   },
