@@ -9,11 +9,13 @@ const add = async (req, res) => {
 
   const newSeed = new SeedModel({
     id: autoGenerateSeedID,
-    name,
-    description,
-    price,
-    image,
+    name: name,
+    description: description,
+    price: price,
+    image: image,
   });
+
+  console.log(newSeed);
 
   newSeed.save().then((result) => {
     res.status(200).json({
