@@ -5,7 +5,7 @@ const add = async (req, res) => {
 
   const toolList = await ToolModel.find();
   const ToolRecordCount = toolList.length;
-  const autoGenerateToolID = `SUM${ToolRecordCount + 1}`;
+  const autoGenerateToolID = `SMP${ToolRecordCount + 1}`;
 
   const newTool = new ToolModel({
     id: autoGenerateToolID,

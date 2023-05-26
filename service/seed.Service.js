@@ -5,7 +5,7 @@ const add = async (req, res) => {
 
   const seedList = await SeedModel.find();
   const SeedRecordCount = seedList.length;
-  const autoGenerateSeedID = `SUM${SeedRecordCount + 1}`;
+  const autoGenerateSeedID = `SMP${SeedRecordCount + 1}`;
 
   const newSeed = new SeedModel({
     id: autoGenerateSeedID,
