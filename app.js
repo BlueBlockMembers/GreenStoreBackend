@@ -36,9 +36,13 @@ connection.once("open", () => {
 app.use(express.json());
 const fertilizerRoutes = require("./routes/fertilizer/Fertilizer.routes");
 const CustomerRoutes = require("./routes/customer/Customer.routes");
+const CartRoutes = require("./routes/cart/Cart.routes");
+const LoginRoutes = require("./routes/customer/Login.routes");
 
 app.use('/fertilizers', fertilizerRoutes);
 app.use('/customers', CustomerRoutes);
+app.use('/cart', CartRoutes);
+app.use('/login', LoginRoutes);
 
 
 
