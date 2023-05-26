@@ -76,9 +76,21 @@ const getAll = async (req, res) => {
   }
 };
 
+const searchOneSeed = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const result = await SeedModel.findOne({ id: id });
+    res.status(200).send({ message: "Seed found", data: result });
+  } catch (e) {
+    res.status(500).send({ message: "Something went wrong", error: e });
+  }
+};
+
 module.exports = {
   add,
   update,
   deleteSeed,
   getAll,
+  searchOneSeed,
 };

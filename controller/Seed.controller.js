@@ -1,5 +1,11 @@
 const SeedModel = require("../model/Seed.model");
-let { add, update, deleteSeed, getAll } = require("../service/seed.Service");
+let {
+  add,
+  update,
+  deleteSeed,
+  getAll,
+  searchOneSeed,
+} = require("../service/seed.Service");
 const addSeed = async (req, res) => {
   await add(req, res);
 };
@@ -13,9 +19,14 @@ const getAllSeed = async (req, res) => {
   await getAll(req, res);
 };
 
+const getOneSeedByID = async (req, res) => {
+  await searchOneSeed(req, res);
+};
+
 module.exports = {
   addSeed,
   updateSeed,
   deleteBySeed,
   getAllSeed,
+  getOneSeedByID,
 };
