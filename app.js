@@ -5,9 +5,11 @@ require("dotenv").config();
 const dbConnection = require("./config/DB");
 
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ limit: "10mb", extended: false }));
 app.use(morgan("dev"));
+
 dbConnection();
 
 app.get("/", async (req, res, next) => {
@@ -16,7 +18,7 @@ app.get("/", async (req, res, next) => {
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", process.env.CLIENT_URL);
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE,PUT");
   res.setHeader(
     "Access-Control-Allow-Headers",
     "Content-Type",

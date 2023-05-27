@@ -74,9 +74,21 @@ const getAll = async (req, res) => {
   }
 };
 
+const searchOneTool = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const result = await ToolModel.findOne({ id: id });
+    res.status(200).send({ message: "Tool found", data: result });
+  } catch (e) {
+    res.status(500).send({ message: "Something went wrong", error: e });
+  }
+};
+
 module.exports = {
   add,
   update,
   deleteTool,
   getAll,
+  searchOneTool,
 };

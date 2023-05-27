@@ -4,6 +4,7 @@ const {
   deleteByTool,
   getAllTool,
   updateTool,
+  getOneToolByID,
 } = require("../controller/Tool.controller");
 
 //Create tool operation
@@ -17,6 +18,8 @@ router.put("/updateTool/:id", updateTool);
 
 //Delete tool operation
 router.delete("/deleteTool/:id", deleteByTool);
+//Get one Tool operation
 
+router.get("/getOneTool/:id", getOneToolByID);
 //Export module
 module.exports = router;
