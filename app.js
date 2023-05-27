@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/product", require("./routes/product.route"));
-app.use("/api/marketPlace", require("./routes/SupermarketPrice.route"));
+app.use("/api/marketPlace", require("./routes/supermarketPrice.route"));
 app.use("/api/seeds", require("./routes/seed.route"));
 app.use("/api/tools", require("./routes/tool.route"));
 

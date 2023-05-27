@@ -1,6 +1,6 @@
 //Import supermarket price model
 const SupermarketPriceModel = require('./../model/product.model');
-let {add, update, deleteSupermarket, search, getAll} = require('./../service/SupermarketPrice.Service');
+let {add, update, deleteSupermarket, search, getAll} = require('../service/supermarketPrice.Service');
 const addSupermarketPrice = async (req, res) => {
     await add(req, res)
 }

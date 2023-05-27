@@ -1,5 +1,5 @@
 //Import supermarket price model
-const SupermarketPriceModel = require('./../model/SupermarketPrice.model');
+const SupermarketPriceModel = require('../model/supermarketPrice.model');
 
 const add = async (req, res) => {
     console.log(req.body)
