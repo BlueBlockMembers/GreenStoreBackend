@@ -1,15 +1,16 @@
 //Import supermarket price model
-const SupermarketPriceModel = require('./../model/SupermarketPrice.model');
+const SupermarketPriceModel = require('../model/supermarketPrice.model');
 
 const add = async (req, res) => {
-    const {itemId, itemName, yesterDayPrice, toDayPrice} = req.body;
+    console.log(req.body)
+    const {itemID, itemName, yesterDayPrice, toDayPrice} = req.body;
 
     const priceList = await SupermarketPriceModel.find();
     const priceRecordCount = priceList.length;
     const autoGenerateSuperMarketPriceID = `SUM${priceRecordCount + 1}`;
 
     const newPrice = new SupermarketPriceModel({
-        superMarketPriceID: autoGenerateSuperMarketPriceID, itemId, itemName, yesterDayPrice, toDayPrice
+        superMarketPriceID: autoGenerateSuperMarketPriceID, itemId: itemID, itemName, yesterDayPrice, toDayPrice
     })
 
     newPrice.save().then((result) => {

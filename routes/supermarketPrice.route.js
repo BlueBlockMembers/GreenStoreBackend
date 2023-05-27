@@ -5,7 +5,7 @@ const {
     getAllSupermarketPrice,
     getOneSupermarketPrice,
     updateSupermarketPrice
-} = require('../controller/SupermarketPrice.controller')
+} = require('../controller/supermarketPrice.controller')
 
 
 //Create supermarket price operation
